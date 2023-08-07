@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fragment } from 'react'
 import './Header.css'
-import { SpeedDial, SpeedDialAction, makeStyles } from '@mui/material'
+import { SpeedDial, SpeedDialAction } from '@mui/material'
 import { useState } from 'react'
 import { Dashboard, Person, ExitToApp, ListAlt, Home } from '@mui/icons-material'
 import {Backdrop} from '@mui/material'
@@ -71,12 +71,13 @@ const UserOptions = ({user}) => {
 
     return (
         <Fragment>
-            <Backdrop open={open}/>
+            <Backdrop open={open} style={{zIndex: '10'}}/>
             <SpeedDial
                 ariaLabel='Navigation speed dial'
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 open={open}
+                style={{zIndex: '11'}}
                 direction='down'
                 className='speedDial'
                 icon={<img className='speedDialIcon' src={user.avatar.url ? user.avatar.url : '/profile.png'} alt='Profile' />}
