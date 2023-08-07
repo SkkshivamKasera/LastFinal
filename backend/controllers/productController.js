@@ -35,7 +35,7 @@ exports.createProducts = async (req, res, next) => {
 
 exports.getAllProducts = async (req, res, next) => {
     try {
-        let resultPerPage = 5
+        let resultPerPage = process.env.PAGE
         const apifeatures = new ApiFeatures(Products.find(), req.query).search().filter().pagination(resultPerPage)
         const products = await apifeatures.query
         const productsCount = await Products.countDocuments()
