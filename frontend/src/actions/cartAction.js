@@ -2,7 +2,7 @@ import { ADD_TO_CART, REMOVE_CART_ITEM, SAVE_SHIPPING_INFO } from "../constants/
 import axios from "axios";
 
 export const addItemToCart = (id, quantity) => async (dispatch, getState)  => {
-    try{let live2 = `http://localhost:5000/api/v1/product/${id}`
+    try{let live2 = `http://localhost:10000/api/v1/product/${id}`
     const {data} = await axios.get(
         live2,
         { withCredentials: true}

@@ -55,7 +55,7 @@ const Payment = () => {
                 withCredentials: true
             }
             const { data } = await axios.post(
-                "http://localhost:5000/api/v1/payment/process",
+                "http://localhost:10000/api/v1/payment/process",
                 paymentData,
                 config
             )

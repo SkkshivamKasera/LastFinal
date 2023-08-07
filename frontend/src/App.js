@@ -48,7 +48,7 @@ function App() {
 
   const getStripeApiKey = useCallback(async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/v1/stripeapikey");
+      const { data } = await axios.get("http://localhost:10000/api/v1/stripeapikey");
       setStripeApiKey(data.stripeApiKey);
     } catch (error) {
       alert.error("Internal Server is Down Please Come Back Later.");
